@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Генерация карты сайта</title>
+	
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	
+	<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
+</head>
+<body>
+	<form id="form">
+		<h1>Генератор Sitemap - карты сайта для поисковых систем</h1>
+		<h1 style="text-align:center;color:red;">Лимит - 20 адресов</h1>
+		
+		<p>
+			<label for="url" style="float:left;">URL сайта:</label>
+			<input name="url" id="url" type="text" value="http://" required />
+			<br>
+			<span>Например: http://site.ru</span>
+		</p>
+		
+		<p>
+			<label for="changefreq">Частота изменений:</label>
+			<select name="changefreq">
+				<option value="off" selected>-</option>
+				<option value="always">всегда</option>
+				<option value="hourly">ежечасно</option>
+				<option value="daily">ежедневно</option>
+				<option value="weekly">еженедельно</option>
+				<option value="monthly">ежемесячно</option>
+				<option value="yearly">каждый год</option>
+				<option value="never">никогда</option>
+			</select>
+		</p>
+		
+		<p>
+			<label for="modification">Последняя модификация:</label>
+			<br>
+			
+			<input type="radio" name="modification" value="off" id="modification0">
+			<label for="modification0" style="padding-right:15px;font-weight:normal;">Нет</label>
+			
+			<input type="radio" name="modification" value="on" id="modification1" checked>
+			<label for="modification1" style="font-weight:normal;">Текущее серверное время</label>
+		</p>
+		
+		<p>
+			<label for="priority">Приоритет:</label>
+			<br>
+			
+			<input type="radio" name="priority" value="off" id="priority0" checked>
+			<label for="priority0" style="padding-right:15px;font-weight:normal;">Нет</label>
+			
+			<input type="radio" name="priority" value="on" id="priority1">
+			<label for="priority1" style="font-weight:normal;">Рассчитать автоматически</label>
+		</p>
+		
+		<p>
+			<label for="compress">Сжать выходной файл:</label>
+			<br>
+			
+			<input type="radio" name="compress" value="off" id="compress0" checked>
+			<label for="priority0" style="padding-right:15px;font-weight:normal;">Нет</label>
+			
+			<input type="radio" name="compress" value="on" id="compress1">
+			<label for="priority1" style="font-weight:normal;">Да (Gzip)</label>
+		</p>
+		
+		<div>
+			<p class="show" id="status"></p>
+		</div>
+		
+		<p>
+			<input class="submit" type="submit" value="Старт!" id="btn" />
+		</p>
+	</form>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+AddDefaultCharset Utf-8
+
+AddType application/force-download .xml
+AddType application/force-download .gz
+
+Options -Indexes
+
+#php_value display_errors 1
+#php_value error_reporting E_ALL
